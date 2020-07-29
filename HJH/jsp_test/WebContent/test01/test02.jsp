@@ -12,7 +12,7 @@ request.setAttribute("name", "홍길동");//속성정보 실어줌
 </head>
 <body>
 <h2>Request Test</h2>
-<form action="../test02" method="post">
+<form action="../test02" method="post">	<!-- 폼의 데이터는 파라메타값으로 전송 -->
 나이 : <input type="text" name="age"/><br>
 성별 :
 	<input type="radio" name="gender" value="M">남자
