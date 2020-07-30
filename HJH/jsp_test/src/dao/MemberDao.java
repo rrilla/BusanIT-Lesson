@@ -64,6 +64,10 @@ public class MemberDao {
 		return list;
 	}
 	
+	public void insert() {
+		
+	}
+	
 	private void close(Connection conn, PreparedStatement ps, ResultSet rs) {	
 		try {//다른 메서드에서도 close가 사용되니 함수선언후 함수로사용
 			if(rs!=null)rs.close();
