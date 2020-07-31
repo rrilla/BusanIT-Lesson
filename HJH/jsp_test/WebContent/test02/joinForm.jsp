@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="../join" method="post">
+<c:set var="msg" value="${param.msg }"/>
+<c:if test="${not empty msg }">
+<script type="text/javascript">
+	alert(${msg});
+</script>
+</c:if>
+	<form action="join.do" method="post">
 		<table>
 			<tr><th>아디 - </th><td><input type="text" name="id"></td></tr>
 			<tr><th>비번 - </th><td><input type="password" name="pw"></td></tr>

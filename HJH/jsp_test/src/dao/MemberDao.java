@@ -64,8 +64,64 @@ public class MemberDao {
 		return list;
 	}
 	
-	public void insert() {
-		
+	public MemberVO selectOne(String id) {
+		MemberVO vo = null;
+		Connection conn=null;
+		PreparedStatement ps=null;   //PreparedStatement == sql쿼리를 전송하기 위한 객체
+		ResultSet rs=null;
+		String sql="select * from member_test where id=?";
+		try {
+			conn=getConn();
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, id);
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				vo=new MemberVO();
+				vo.setMno(rs.getInt("mno"));
+				vo.setId(rs.getString("id"));
+				vo.setPw(rs.getString("pw"));
+				vo.setName(rs.getString("name"));
+				vo.setGender(rs.getString("gender"));
+				vo.setJob(rs.getString("job"));
+				vo.setJoin_date(rs.getDate("join_date"));
+				vo.setIntro(rs.getString("intro"));
+			}
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			close(conn, ps, rs);
+		}
+		return vo;
+	}
+	
+	public boolean insert(MemberVO vo) {
+		boolean flag=false;
+		Connection conn=null;
+		PreparedStatement ps=null;
+		String sql = "insert into member_test(mno, id, pw, name, gender, job, intro)"
+				+ "value(mno_seq.nextval, ?, ?, ?, ?, ?, ?)";
+		try {
+			conn = getConn();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, vo.getId());
+			ps.setString(2, vo.getPw());
+			ps.setString(3, vo.getName());
+			ps.setString(4, vo.getGender());
+			ps.setString(5, vo.getJob());
+			ps.setString(6, vo.getIntro());
+			int n = ps.executeUpdate();
+			if(n==1) {
+				flag = true;
+				System.out.println("insert 성공");
+			}else
+				System.out.println("insert 실패");
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			close(conn,ps);
+		}
+		return flag;
 	}
 	
 	private void close(Connection conn, PreparedStatement ps, ResultSet rs) {	
