@@ -18,7 +18,7 @@
 이름 : <%=name %><br>
 나이 : <%=age %><br>
 성별 : <%=gender %><br>	
-<%   				/* 값 정확히모름, 유효성 검사 위해 java 코드사용 */
+<%   				/* 값 정확히 모름, 유효성 검사 위해 java 코드사용 */
 	String str="";
 	if(hobbys!=null){
 		for(String h:hobbys){
