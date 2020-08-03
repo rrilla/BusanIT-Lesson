@@ -15,7 +15,7 @@
 	alert(${msg});
 </script>
 </c:if>
-	<form action="join.do" method="post">
+	<form action="../join.do" method="post">
 		<table>
 			<tr><th>아디 - </th><td><input type="text" name="id"></td></tr>
 			<tr><th>비번 - </th><td><input type="password" name="pw"></td></tr>

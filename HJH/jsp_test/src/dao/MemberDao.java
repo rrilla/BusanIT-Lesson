@@ -99,8 +99,7 @@ public class MemberDao {
 		boolean flag=false;
 		Connection conn=null;
 		PreparedStatement ps=null;
-		String sql = "insert into member_test(mno, id, pw, name, gender, job, intro)"
-				+ "value(mno_seq.nextval, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into member_test(mno, id, pw, name, gender, job, intro) values(mno_seq.nextval, ?, ?, ?, ?, ?, ?)";
 		try {
 			conn = getConn();
 			ps = conn.prepareStatement(sql);

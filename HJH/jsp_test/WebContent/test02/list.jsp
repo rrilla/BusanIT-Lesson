@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="joinForm.jsp">회원등록 폼</a>
+<a href="test02/joinForm.jsp">회원등록 폼</a>
 	<table>
 		<tr>
 			<th>mno</th>
