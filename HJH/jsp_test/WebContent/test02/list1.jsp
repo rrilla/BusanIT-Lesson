@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="join.do">회원등록 폼</a>
+<a href="../join.do">회원등록 폼</a>
 	<table>
 		<tr>
 			<th>mno</th>

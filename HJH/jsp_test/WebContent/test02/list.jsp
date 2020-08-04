@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>jsp</title>
 </head>
 <body>
 <a href="test02/joinForm.jsp">회원등록 폼</a>
